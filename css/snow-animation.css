@@ -1,0 +1,40 @@
+#snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+#snoweffect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.snowbutton {
+    background: radial-gradient(ellipse at bottom,#ffffff,80%,#ffffff4b );
+    border: transparent;
+    color: #1b2b40;
+    cursor: pointer;
+}
+
+.snowbutton:hover{
+    background-image: radial-gradient(circle at var(--x) var(--y), #ffffff00,30%,#ffffff 60%) !important;
+}
+
+button.snow.hexagon{
+    background: radial-gradient(ellipse at bottom,#ffffff,80%,#ffffff4b );
+    border: transparent;
+    color: #1b2b40;
+    cursor: pointer;
+}
+
+
+  
