@@ -945,18 +945,38 @@ http://www.templatemo.com/tm-472-blaster
 		<!-- contact section -->
 		<section id="contact">
 			<div class=" px-1 container-fluid">
-				<form action="https://formspree.io/f/xgebbqqo" method="POST">
-					<label>
-						Your email:
-						<input type="email" name="email">
-					</label>
-					<label>
-						Your message:
-						<textarea name="message"></textarea>
-					</label>
-					<!-- your other form fields go here -->
-					<button type="submit">Send</button>
-				</form>
+				<div class="row">
+					<div class="row">
+						<div class="col-12">
+							<div class="row topic">
+								<h1 class="title grad-text">CONTACT ME</h1>
+								<h2 class="subheading capitalize">Work opportunities, Creative projects, or just for fun
+								</h2>
+							</div>
+						</div>
+					</div>
+					<form class="row" action="https://formspree.io/f/xgebbqqo" method="POST">
+						<div class="row">
+							<div class=" col col-md-6 col-12">
+								<input name="name" type="text" class="form-control" id="name" placeholder="Name">
+							</div>
+							<div class=" col col-md-6 col-12">
+								<input name="email" type="email" class="form-control" id="email" placeholder="Email Address">
+							</div>
+						</div>
+						<div class="row">
+							<div class=" col col-md-6 col-12">
+								<input name="subject" type="text" class="form-control" id="subject" placeholder="Subject">
+								<textarea name="message" rows="7" class="form-control" id="message"
+									placeholder="Message"></textarea>
+							</div>
+							<div class=" col col-md-6 col-12">
+								<input name="submit" type="submit" class="form-control snowbutton" id="submit"
+									value="SEND EMAIL">
+							</div>
+						</div>				
+					</form>
+				</div>
 				<div class="row" style="margin: 3rem; font-size: 1.2rem;">
 					<div class="col-md-3 offset-md-1">
 						<img style="height: 1.6rem;" class="responsiveWidth" src="images/phone-icon.png" alt="Phone: ">

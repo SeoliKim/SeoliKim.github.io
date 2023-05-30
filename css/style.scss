@@ -55,6 +55,7 @@ section {
   height: auto;
   /* Set minimum height to 100 viewport height */
   min-height: 100vh;
+  max-width: 100vw;
   display: flex;
   /* Use flexbox */
   flex-direction: column;
@@ -727,6 +728,7 @@ p {
     width: 100%;
     font-size: clamp(.5rem, 2vh, 2rem);
   }
+
   @media(min-width:768px) {
     .timeline-breakpoint {
       font-size: clamp(1rem, 5vh, 2rem);
@@ -766,7 +768,7 @@ p {
     .defaultPage {
       height: fit-content;
       border: none;
-      
+
     }
 
 
@@ -831,6 +833,15 @@ p {
 
 #contact .topic {
   text-align: center;
+}
+@media (min-width:767.98px){
+  #contact .topic{
+    text-align: left;
+    padding-left: 5%;
+    h1{
+      width: fit-content;
+    }
+  }
 }
 
 #contact form .col {
@@ -898,7 +909,6 @@ p {
   }
 
 }
-
 
 /* page */
 .page {
