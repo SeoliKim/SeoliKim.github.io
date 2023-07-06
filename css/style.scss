@@ -846,6 +846,7 @@ p {
 
 #contact form .col {
   height: 100%;
+  width: 90%;
 }
 
 #contact .form-control {
@@ -890,9 +891,7 @@ p {
 
 @media (min-width:767.98px) {
   #contact form {
-    margin-left: 7vw;
-    margin-right: 10vw;
-
+    margin-left: auto;
     .topic {
       margin-bottom: clamp(1rem, 2vw, 4rem);
       text-align: left;
