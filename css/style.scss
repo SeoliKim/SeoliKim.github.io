@@ -23,12 +23,18 @@ body {
   scroll-snap-type: y proximity;
   overflow-y: scroll;
 }
+@media (min-width:767.98px) {
+  .wrapper{
+    overflow-x: hidden;
+  }
+}
 
 @media (max-width:767.98px) {
   .PCOnly {
     display: none;
   }
 }
+
 
 
 
@@ -390,52 +396,50 @@ p {
 
 /* Default Page */
 .hexagon-container {
-  column-gap: 1rem;
+  margin-left: auto;
   max-width: 85rem;
   height: min-content;
   padding: 0;
-}
+  display:flex;
+  --s: clamp(10rem, 13vw, 16rem);  /* size  */
+  --m: 4px;    /* margin */
+  --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px); 
+  font-size: 0;
 
-@media (min-width: 1200px) {
-  button.hexagon:nth-child(n + 4) {
-    transform: translateY(-2.7rem);
+  button.hexagon {
+    //hexegon effect
+    width: var(--s);
+    margin: var(--m);
+    height: calc(var(--s) * 1.1547);
+    display: inline-block;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    margin-bottom: calc(var(--m) - var(--s) * 0.2885);
+
+    //style
+    background: radial-gradient(ellipse at bottom, #ffffff, 70%, #ffffff4b);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1b2b40;
+    position: relative;
+    box-shadow: -2rem 1rem 0 1rem rgb(255, 255, 255, 0.5);
+
+    img {
+      max-width: 50%;
+      max-height: 35%;
+      order: -1;
+    }
   }
 }
 
-#skill button.hexagon {
-  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%);
-  background: radial-gradient(ellipse at bottom, #ffffff, 70%, #ffffff4b);
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #1b2b40;
-  height: clamp(12rem, 15vw, 16rem);
-  width: clamp(12rem, 15vw, 16rem);
-  position: relative;
-  box-shadow: -2rem 1rem 0 1rem rgb(255, 255, 255, 0.5);
-
-  img {
-    max-width: 50%;
-    max-height: 35%;
-    order: -1;
-  }
+.hexagon-container::before{
+  content: "";
+  width: calc(var(--s) / 2 + var(--m));
+  float: left;
+  height: 120%; 
+  shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px), #000 0 var(--f));
 }
 
-@media (max-width: 825px) {
-  button.hexagon:nth-child(3n) {
-    margin-right: calc(50% - 8.2rem);
-    margin-left: calc(50% - 8.2rem);
-  }
-}
 
-@media (min-width: 825px) and (max-width: 1100px) {
-  button.hexagon:nth-child(5n + 4) {
-    margin-left: calc(50% - 18rem);
-  }
-
-  button.hexagon:nth-child(5n + 5) {
-    margin-right: calc(50% - 18rem);
-  }
-}
 
 /* Detailed Page */
 #skill>.detail {
@@ -891,7 +895,7 @@ p {
 
 @media (min-width:767.98px) {
   #contact form {
-    margin-left: auto;
+    margin-right: 5vw;
     .topic {
       margin-bottom: clamp(1rem, 2vw, 4rem);
       text-align: left;
@@ -905,6 +909,10 @@ p {
         text-align: left;
       }
     }
+    .col-md-6 {
+      flex: 0 0 auto;
+      width: 50%;
+  }
   }
 
 }
