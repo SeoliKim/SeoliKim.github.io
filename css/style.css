@@ -364,16 +364,17 @@ p {
           clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
   margin-bottom: calc(var(--m) - var(--s) * 0.2885);
   background: radial-gradient(ellipse at bottom, #ffffff, 70%, rgba(255, 255, 255, 0.2941176471));
-  font-size: 1.5rem;
-  font-weight: bold;
   color: #1b2b40;
   position: relative;
   box-shadow: -2rem 1rem 0 1rem rgba(255, 255, 255, 0.5);
 }
 .hexagon-container button.hexagon img {
   max-width: 50%;
-  max-height: 35%;
+  max-height: 32%;
   order: -1;
+}
+.hexagon-container button.hexagon h3 {
+  font-size: 1.6rem;
 }
 
 .hexagon-container::before {
