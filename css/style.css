@@ -78,12 +78,12 @@ section > .container {
 }
 .title {
   font-weight: bolder;
-  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-size: clamp(2.5rem, 10vw, 3rem);
 }
 
 @media (min-width: 767.98px) {
   .title {
-    font-size: clamp(4rem, 5.5vw, 7rem);
+    font-size: clamp(3rem, 4.5vw, 3.5rem);
   }
 }
 .heading {
@@ -126,6 +126,12 @@ section > .container {
   color: transparent;
 }
 
+.full-line-text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
 .hidden {
   display: none !important;
 }
@@ -134,20 +140,27 @@ section > .container {
   display: block;
 }
 
+button {
+  border-radius: 10%;
+  padding: 1em, 0.5em;
+}
+
 .previewImg {
   cursor: pointer;
 }
 
 .responsive {
-  max-width: 100%;
-  max-height: 100%;
   width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .responsiveWidth {
   max-width: 100%;
-  height: auto;
+  height: auto; /* Maintains the aspect ratio */
 }
 
 .responsiveHeight {
@@ -330,7 +343,9 @@ p {
   height: fit-content;
 }
 #skill .default .row {
-  justify-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
   align-items: center;
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -344,14 +359,15 @@ p {
 
 /* Default Page */
 .hexagon-container {
-  margin-left: auto;
-  max-width: 85rem;
+  max-width: 35rem;
   height: -moz-min-content;
   height: min-content;
   padding: 0;
   display: flex;
-  --s: clamp(10rem, 13vw, 16rem); /* size  */
-  --m: 4px; /* margin */
+  --s: clamp(10rem, 13vw, 16rem);
+  /* size  */
+  --m: 4px;
+  /* margin */
   --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
   font-size: 0;
 }
@@ -369,12 +385,12 @@ p {
   box-shadow: -2rem 1rem 0 1rem rgba(255, 255, 255, 0.5);
 }
 .hexagon-container button.hexagon img {
-  max-width: 50%;
+  max-width: 52%;
   max-height: 32%;
   order: -1;
 }
 .hexagon-container button.hexagon h3 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .hexagon-container::before {
@@ -400,9 +416,6 @@ p {
     grid-template-rows: repeat(5, 1fr);
     grid-template-columns: repeat(7, 1fr);
     grid-template-areas: "one one one two two two two" "one one one two two two two" "one one one button three three three" "four four four four three three three" "four four four four three three three";
-  }
-  #skill > .detail.game, #skill > .detail.journal {
-    grid-template-areas: "one one one two two two two" "one one one two two two two" "one one one button three three three" "one one one four three three three" "one one one four three three three";
   }
 }
 #skill > .detail > .one {
@@ -443,66 +456,58 @@ p {
   width: 90%;
 }
 
-#skill > .detail > .card {
+#skill > .detail .card {
   transition: all 200ms ease;
   background: hsla(0, 0%, 0%, 0.25);
   border: transparent;
   color: #d1dee8;
-  align-items: center;
-  justify-content: center;
+  padding: 2rem 0.5rem;
+}
+#skill > .detail .card .box {
   display: inline-flex;
   position: relative;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 1rem;
+  gap: 0.5rem; /* Add some spacing between items */
+  overflow-y: auto; /* Enable vertical scrolling for the content area */
 }
-#skill > .detail > .card .topic {
-  order: -1 !important;
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: baseline;
-}
-#skill > .detail > .card .topic .cardTitle {
+#skill > .detail .card .box .cardTitle {
   padding-left: 5%;
 }
-#skill > .detail > .card .topic .cardTitle h1 {
+#skill > .detail .card .box .cardTitle h1 {
   font-size: clamp(1.8rem, 2.4vw, 2.8rem);
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   font-weight: bolder;
   text-align: left;
 }
-#skill > .detail > .card .topic .cardTitle h4 {
+#skill > .detail .card .box .cardTitle h4 {
   text-align: left;
 }
-#skill > .detail > .card .topic .cardTitle h6 {
+#skill > .detail .card .box .cardTitle h6 {
   color: rgba(209, 222, 232, 0.4862745098);
   font-weight: bold;
 }
-#skill > .detail > .card .topic img {
-  width: 25%;
-  padding-left: 5%;
-  padding-right: 3%;
+#skill > .detail .card .box img {
+  width: 125px;
+  padding: 10px;
 }
-#skill > .detail > .card .content {
+#skill > .detail .card .box .topic {
+  order: -1 !important;
   width: 100%;
-  overflow-x: hidden;
-  max-height: 100%;
   display: inline-flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  overflow: auto;
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: baseline;
 }
-#skill > .detail > .card .content > div {
-  width: 100%;
-  margin-bottom: 0.5rem;
+#skill > .detail .card .box .content {
+  padding-left: 1rem;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-#skill > .detail > .card .content > div h4 {
+#skill > .detail .card .box .content h4 {
   font-size: 1.5rem;
 }
-#skill > .detail > .card .content > div h5 {
+#skill > .detail .card .box .content h5 {
   color: rgba(209, 222, 232, 0.7411764706);
   font-size: clamp(0.8rem, 0.8vw, 1.6rem);
   text-transform: uppercase;
@@ -510,60 +515,41 @@ p {
   margin-bottom: 0.1rem;
   text-align: left;
 }
-#skill > .detail > .card .content > div p {
-  padding-left: 1rem;
-}
-#skill > .detail > .card .content > div ul.oneC {
+#skill > .detail .card .box .content ul.oneC {
   -moz-columns: 1;
        columns: 1;
 }
-#skill > .detail > .card .content > div ul.twoC {
+#skill > .detail .card .box .content ul.twoC {
   -moz-columns: 2;
        columns: 2;
 }
-#skill > .detail > .card .content > div ul li {
+#skill > .detail .card .box .content ul li {
   width: 90%;
   -moz-column-break-inside: avoid;
        break-inside: avoid;
 }
-#skill > .detail > .card .content > div ul li h6 {
+#skill > .detail .card .box .content ul li h6 {
   margin-bottom: 0;
   font-weight: bold;
 }
-#skill > .detail > .card .content > div ul li p {
+#skill > .detail .card .box .content ul li p {
   text-transform: none;
 }
-#skill > .detail > .card .content > div .progress {
+#skill > .detail .card .box .content .progress {
   height: 0.5rem;
 }
-#skill > .detail > .card .content > div .progress .progress-bar {
+#skill > .detail .card .box .content .progress .progress-bar {
   background-color: #0095ff;
 }
-#skill > .detail > .card .content > div a.expTrigger {
+#skill > .detail .card .box .content a.expTrigger {
   text-decoration: underline;
   margin-top: 0.4rem;
   background-color: hsla(0, 0%, 0%, 0.25);
   color: #d1dee8;
 }
-#skill > .detail > .card .content > div a.expTrigger:hover {
+#skill > .detail .card .box .content a.expTrigger:hover {
   background-color: #d1dee8;
   color: rgb(0, 0, 0);
-}
-#skill > .detail > .card.horizantal-display .topic {
-  display: inline-block;
-  width: 20%;
-  padding-left: 0%;
-}
-#skill > .detail > .card.horizantal-display .topic img {
-  width: 60%;
-}
-#skill > .detail > .card.horizantal-display .topic .cardTitle {
-  margin-top: 1rem;
-}
-#skill > .detail > .card.horizantal-display .content {
-  width: 80%;
-  padding-left: 3%;
-  display: inline-block;
 }
 
 /* experience section */
@@ -577,82 +563,60 @@ p {
   height: 80vh;
 }
 
-#experience .timeline {
-  overflow-y: scroll;
-  overflow-x: visible;
-  height: 80vh;
-  width: 5%;
-  margin-right: 5%;
-  float: left;
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  scrollbar-color: white #FC94AF;
-}
-#experience .timeline::-webkit-scrollbar {
-  width: max(0.2rem, 1vw);
-}
-#experience .timeline::-webkit-scrollbar-thumb {
-  background: white;
-  border-radius: 100vw;
-}
-#experience .timeline::-webkit-scrollbar-track {
-  background: #FC94AF;
-  border-radius: 100vw;
-}
-#experience .timeline .timeline-breakpoint {
+#experience .button-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 70vh;
-  width: 100%;
-  font-size: clamp(0.5rem, 2vh, 2rem);
+  margin-top: 1.2em;
+  justify-content: space-around;
+  transform: translate(0, 1em);
 }
-@media (min-width: 768px) {
-  #experience .timeline .timeline-breakpoint {
-    font-size: clamp(1rem, 5vh, 2rem);
-  }
-}
-
-/* scrollbar section */
-#experience .scrollbar {
-  margin-top: 5vh;
-  position: absolute;
-  right: 2.5vw;
-  height: 70vh;
-  width: max(0.4rem, 1vw);
-  border-style: solid;
-  border-width: 0.05rem;
-  border-color: rgba(209, 222, 232, 0.6901960784);
-  border-radius: 0.4rem;
-}
-#experience .scrollbar .track {
-  position: relative;
-  background-image: linear-gradient(to bottom, #FC94AF, #b7d5eb, #79c1f5);
-  border-radius: 0.4rem;
-  width: 100%;
-  height: 10%;
-}
-
-#experience .detail {
-  width: 70vw;
-  height: 80vh;
-  flex-direction: column;
-  float: left;
-}
-#experience .detail .defaultPage {
-  height: -moz-fit-content;
-  height: fit-content;
+#experience .button-container button {
+  height: 30px;
+  padding: 5px, 25px;
+  background-color: transparent;
   border: none;
 }
+#experience .button-container button:hover {
+  font-weight: 800;
+  font-size: larger;
+}
+#experience .button-container .controls {
+  width: 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#experience .button-container .controls button {
+  background-color: transparent;
+  border: none;
+  color: #d1dee8;
+  font-weight: 1000;
+  font-size: larger;
+}
+#experience .button-container .controls button svg {
+  width: 1em;
+  height: 1em;
+}
+#experience .button-container .controls button:disabled {
+  color: grey;
+  cursor: not-allowed;
+}
+#experience .detail {
+  padding-top: 1em;
+  width: 90vw;
+  max-height: 65vh;
+  flex-direction: column;
+  float: left;
+}
 #experience .detail .card {
+  text-align: left;
   margin-bottom: 2vh;
   display: none;
   flex: 1 1 auto;
   width: 100%;
   background-color: transparent;
   position: relative;
-  max-height: 40%;
-  padding: 4%;
+  max-height: 25%;
+  padding: 8px;
   overflow-y: hidden;
   overflow-x: hidden;
   /* important for absolute positioning */
@@ -666,24 +630,15 @@ p {
   color: #d1dee8;
   text-transform: capitalize;
 }
-#experience .detail .card.work {
-  border-color: rgb(59, 177, 255);
-}
-#experience .detail .card.project {
-  border-color: rgb(255, 59, 137);
-}
 
 @media (min-width: 768px) {
-  #experience .timeline {
-    width: 10%;
+  #experience .button-container {
+    width: 325px;
   }
   #experience .detail {
-    width: 60vw;
+    width: 80vw;
     height: 80vh;
     flex-direction: column;
-  }
-  #experience .detail .card {
-    text-align: left;
   }
 }
 /* contact section */
@@ -776,11 +731,23 @@ p {
   margin: 4%;
   top: 0px;
   transition: all 0.5s ease;
+  overflow-y: auto;
 }
 .page .media {
   align-items: flex-start;
   max-width: 80%;
   max-height: 80%;
+}
+.page .header {
+  padding-top: 3em;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.page .section-header {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgba(209, 222, 232, 0.7568627451);
 }
 @media (min-width: 768px) {
   .page .media {
@@ -800,8 +767,8 @@ p {
   height: 1.5rem;
   width: 1.5rem;
   position: absolute;
-  right: 2%;
-  top: 2%;
+  right: 15px;
+  top: 15px;
   cursor: pointer;
 }
 
@@ -885,9 +852,6 @@ p {
 @media (max-width: 980px) {
   .custom-navbar .navbar-brand {
     font-size: 24px;
-  }
-  #about img {
-    padding-top: 40px;
   }
   #contact form {
     padding-top: 30px;
