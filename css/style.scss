@@ -2,7 +2,6 @@
 $pageYOffset: 0px;
 $innerHeight: 0px;
 
-
 html,
 body {
   height: auto;
@@ -17,6 +16,27 @@ body {
   font-weight: 400;
   color: #d1dee8;
 }
+
+/* Track */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.425); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 
 .wrapper {
   height: 100vh;
@@ -926,6 +946,14 @@ p {
     p {
       padding-left: 1rem;
     }
+  }
+
+  .image-row{
+    height: 120px;
+    width: 100%;
+    overflow-x: auto;
+    display: inline-flex;
+    flex-direction: row;
   }
 
   .closeButton {
