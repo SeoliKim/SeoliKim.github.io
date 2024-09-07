@@ -15,7 +15,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 5button-containerpx;
 }
 
 ::-webkit-scrollbar-track {
@@ -653,7 +653,7 @@ p {
 
 @media (min-width: 768px) {
   #experience .button-container {
-    width: 325px;
+    width: 500px;
   }
   #experience .detail {
     width: 80vw;

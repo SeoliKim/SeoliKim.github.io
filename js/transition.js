@@ -65,6 +65,8 @@ returnButtons.forEach((returnbutton) => {
 document.getElementById("tab-all").addEventListener("click", () => updateCardsByFilter("card"));
 document.getElementById("tab-work").addEventListener("click", () => updateCardsByFilter("work"));
 document.getElementById("tab-project").addEventListener("click", () => updateCardsByFilter("project"));
+document.getElementById("tab-ai").addEventListener("click", () => updateCardsByFilter("ai"));
+document.getElementById("tab-software").addEventListener("click", () => updateCardsByFilter("software"));
 
 const allCards= Array.from(document.querySelectorAll("#experience .card"));
 let cards= allCards;
