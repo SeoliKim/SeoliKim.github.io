@@ -223,6 +223,15 @@ p {
   line-height: 1.5rem;
 }
 
+.list-subheader {
+  margin-top: 3px;
+  margin-bottom: 0;
+  font-size: small;
+  font-weight: bold;
+  color: rgba(209, 222, 232, 0.7176470588);
+  font-style: italic;
+}
+
 #about,
 #experience,
 #contact {
