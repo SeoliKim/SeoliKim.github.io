@@ -67,6 +67,7 @@ document.getElementById("tab-work").addEventListener("click", () => updateCardsB
 document.getElementById("tab-project").addEventListener("click", () => updateCardsByFilter("project"));
 document.getElementById("tab-ai").addEventListener("click", () => updateCardsByFilter("ai"));
 document.getElementById("tab-software").addEventListener("click", () => updateCardsByFilter("software"));
+document.getElementById("tab-data").addEventListener("click", () => updateCardsByFilter("data"));
 
 const allCards= Array.from(document.querySelectorAll("#experience .card"));
 let cards= allCards;
