@@ -388,12 +388,12 @@ p {
 
 /* Default Page */
 .hexagon-container {
-  max-width: 35rem;
+  max-width: 40rem;
   height: -moz-min-content;
   height: min-content;
   padding: 0;
   display: flex;
-  --s: clamp(10rem, 13vw, 16rem);
+  --s: clamp(10rem, 13vw, 13rem);
   /* size  */
   --m: 4px;
   /* margin */
@@ -405,8 +405,7 @@ p {
   margin: var(--m);
   height: calc(var(--s) * 1.1547);
   display: inline-block;
-  -webkit-clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
-          clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
   margin-bottom: calc(var(--m) - var(--s) * 0.2885);
   background: radial-gradient(ellipse at bottom, #ffffff, 70%, rgba(255, 255, 255, 0.2941176471));
   color: #1b2b40;

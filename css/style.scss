@@ -440,11 +440,11 @@ p {
 
 /* Default Page */
 .hexagon-container {
-  max-width: 35rem;
+  max-width: 40rem;
   height: min-content;
   padding: 0;
   display: flex;
-  --s: clamp(10rem, 13vw, 16rem);
+  --s: clamp(10rem, 13vw, 13rem);
   /* size  */
   --m: 4px;
   /* margin */
